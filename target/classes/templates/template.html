@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <table th:each="item : ${employees}">
+      <tr>
+        <td colspan="2"><h1>Bill</h1></td>
+      </tr>
+      <tr>
+        <td>Seller:</td>
+        <td th:text="${item.seller}"></td>
+      </tr>
+      <tr>
+        <td>GSTIN:</td>
+        <td th:text="${item.sellerGstin}"></td>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td th:text="${item.sellerAddress}"></td>
+      </tr>
+      <tr>
+        <td>Buyer:</td>
+        <td th:text="${item.buyer}"></td>
+      </tr>
+      <tr>
+        <td>GSTIN:</td>
+        <td th:text="${item.buyerGstin}"></td>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td th:text="${item.buyerAddress}"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><hr></td>
+      </tr>
+      <tr>
+        <td>Item</td>
+        <td>Quantity</td>
+        <td>Rate</td>
+        <td>Amount</td>
+      </tr>
+      {{#items}}
+      <tr>
+        <td th:text="${item.items.name}" (th:text="${item.items.quantity}") (th:text="${item.items.rate}") (th:text="${item.items.amount}")>th:text="${item.items.name}" (th:text="${item.items.quantity}") (th:text="${item.items.rate}") (th:text="${item.items.amount}")</td>
+      </tr>
+      {{/items}}
+      <tr>
+        <td colspan="2"><hr></td>
+      </tr>
+    </table>
+  </body>
+</html>
